@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<h1>Hello World!</h1>
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="heading">
+        <h1 class="head-text">
+            CHECK PERSON WHO CAN APPROVE THE LOAN SANCTION
+        </h1>
+    </div>
+    <div class="inputs">
+        <form action="{% url 'result' %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Gender">
+                        <option selected>Gender</option>
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                    </select>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Married">
+                        <option selected>Married</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Dependents">
+                        <option selected>Dependents</option>
+                        <option value="0">Zero</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Education">
+                        <option selected>Education</option>
+                        <option value="0">Graduate</option>
+                        <option value="1">Not Graduate</option>
+                    </select>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Self_Employed">
+                        <option selected>Self_Employed</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <div class="input-group mb-3" >
+                        <span class="input-group-text">$</span>
+                        <span class="input-group-text" > </span>
+                        <input type="text" class="form-control" name="ApplicantIncome"
+                            aria-label="Dollar amount (with dot and two decimal places)">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <span class="input-group-text">Co-applicant Income</span>
+                        <input type="text" class="form-control" name="CoapplicantIncome"
+                            aria-label="Dollar amount (with dot and two decimal places)">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <span class="input-group-text">Loan Amount</span>
+                        <input type="text" class="form-control" name="LoanAmount"
+                            aria-label="Dollar amount (with dot and two decimal places)">
+                    </div>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Loan_Amount_Term">
+                        <option selected>Loan Amount Term</option>
+                        <option value="360">360</option>
+                        <option value="120">120</option>
+                        <option value="240">240</option>
+                        <option value="180">180</option>
+                        <option value="60">60</option>
+                        <option value="300">300</option>
+                        <option value="480">480</option>
+                        <option value="36">36</option>
+                        <option value="84">84</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Credit_History">
+                        <option selected>Credit History</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="Property_Area">
+                        <option selected>Property Area </option>
+                        <option value="0">Urban</option>
+                        <option value="1">Rural</option>
+                        <option value="2">Semiurban</option>
+                    </select>
+                    <div class="button">
+                        <div class="col-12">
+                            <button class="btn btn-outline-success" type="submit">Check </button>
+                        </div>
+
+                    </div>
+                </div>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock content %}
